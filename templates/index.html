@@ -1,0 +1,61 @@
+{%extends 'base.html'%}
+{%block head%}
+
+{%endblock%}
+{%block body%}
+    <div class="container">
+
+        <nav>
+            <ul>
+                <li><a id="aboutbtn" href="#" rel="noopener noreferrer">$(which about)</a></li>
+                <li><a id='contactbtn' href="#" rel="noopener noreferrer">$(which contact)</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h1>jar@justarnav:$ <span id="command">cat SocialLinks.json | jq</span> <span class="cursor">|</span></h1>
+            {<br>
+                <div>&nbsp;&nbsp;&nbsp;"text": "Find me Online",
+            <ul>
+                {%for x in content['links'].items()%}
+                    <li><a href="{{x[1][1]}}" target="_blank" rel="noopener noreferrer">&nbsp;&nbsp;&nbsp;"{{x[0]}}" : "{{x[1][0]}}",</a></li>
+                {%endfor%}
+                <!--
+                <li><a href="#" target="_blank" rel="noopener noreferrer">&nbsp;&nbsp;&nbsp;"youtube" : "JustArnav",</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">&nbsp;&nbsp;&nbsp;"instagram" : "@justarnav2004",</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">&nbsp;&nbsp;&nbsp;"twitter" : "@arnv2004",</a></li>
+                -->
+            </ul>
+        </div>}
+        </main>
+    </div>
+    <div class="hidden">
+        <div id="about-content">
+            <h1>jar@justarnav:$ <span id="command">cat about.md</span> <span class="cursor">|</span></h1>
+            <p>
+                <h1>#About Me</h1>
+                Hi, I am a Silly Boy from West Bengal, India, who Knows Python, Flask, Django and Many More things Including Irritating People.
+                <ul>
+                    <li>- Playing Music</li>
+                    <li>- Playing Way too Much Games</li>
+                    <li>- Cursing Hard in Games and Rage Quiting</li>
+                    <li>- Painting like Bob Ross</li>
+                    <li>- Solving and Analysing Mathematical Problems</li>
+                </ul>
+            </p>
+        </div>
+        <div id="contact-content">
+            <h1>jar@justarnav:$ <span id="command">cat about.md</span> <span class="cursor">|</span></h1>
+            <p>
+                <h1>#Contact Me</h1>
+                Its Unlikely that you wont be able to Contact me through these Social Media links,
+                but you can always mail me in these addresses!
+                <ul>
+                <li>- <a href="mailto:clashngarnav2004@gmail.com">clashngarnav2004@gmail.com</a></li>
+                <li>- <a href="mailto:arnavghosh67@gmail.com">arnavghosh67@gmail.com</a></li>
+                <li>- <a href="mailto:arnavghosh.official.2004@gmail.com">arnavghosh.official.2004@gmail.com</a></li></ul>
+                </p>
+        </div>
+    </div>
+
+    <script src="static/main.js"></script>
+{%endblock%}
