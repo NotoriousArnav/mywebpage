@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import json
 
 app = Flask(__name__, template_folder='templates', static_url_path='/static/', static_folder='static')
@@ -14,5 +14,5 @@ def add_header(r):
 @app.route('/')
 def index():
     with open('links.json','r') as f: links=json.load(f)
-    content={'title':'Welcome to Just Arnav', 'links':links}
+    content={'title':'Welcome to Just Arnav', 'links':links, 'client_ip':request.environ['REMOTE_ADDR']}
     return render_template('index.html', content=content)
